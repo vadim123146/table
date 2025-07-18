@@ -22,7 +22,8 @@ export default defineConfig({
   build: {
     target: 'esnext',
     minify: 'terser',
-    sourcemap: true,
-    outDir: 'dist'
+    sourcemap: false,
+    outDir: 'dist',
+    assetsDir: 'assets'
   }
 })
