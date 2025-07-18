@@ -5,7 +5,6 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [vue()],
   
-  // Базовый путь для GitHub Pages
   base: '/table/',
   
   resolve: {
@@ -24,6 +23,13 @@ export default defineConfig({
     minify: 'terser',
     sourcemap: false,
     outDir: 'dist',
-    assetsDir: 'assets'
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue', 'pinia']
+        }
+      }
+    }
   }
 })
